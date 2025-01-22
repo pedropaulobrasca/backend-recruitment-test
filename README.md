@@ -32,6 +32,7 @@ A customer has requested a very simple `enterprises` management system. Your rol
 
 - Unit and E2E tests;
 - Using asynchronous jobs and/or queues to handle stuff;
+- Integration with external APIs;
 - Audit logs.
 
 If you're struggling, read the documentation for [Elixir](https://hexdocs.pm/elixir/1.18.1/introduction.html), [Phoenix](https://hexdocs.pm/phoenix/Phoenix.html), [Absinthe](https://hexdocs.pm/absinthe/), and [Ecto](https://hexdocs.pm/ecto/Ecto.html). You will find many answers there (I mean really, these docs are top tier).
