@@ -44,6 +44,7 @@ The rest is up to you! Good luck!
 
 To start your `Phoenix` server:
 
+- Fork and clone this repository so you can version your changes;
 - Run `docker-compose up database` to setup the database container;
 - Run `mix setup` to install and setup dependencies, and to run the available migrations;
 - Start the application endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`;
