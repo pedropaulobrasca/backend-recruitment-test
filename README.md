@@ -20,8 +20,6 @@ A customer has requested a very simple `enterprises` management system. Your rol
 - The technical level of the implementation;
 - The level of creativity of the implementation.
 
-> Please keep in mind that we’re not evaluating whether you can build up an application with a million complex features. Do what you can within your available time. However, remember that the more things you can show, the more points your test will potentially earn.
-
 ### What we don't recommend doing
 
 - Asking someone to code your test for you;
@@ -34,6 +32,8 @@ A customer has requested a very simple `enterprises` management system. Your rol
 - Using asynchronous jobs and/or queues to handle stuff;
 - Integration with external APIs;
 - Audit logs.
+
+> Please keep in mind that we’re not evaluating whether you can build up an application with a million complex features. Do what you can within your available time. However, remember that the more things you can show, the more points your test will potentially earn.
 
 If you're struggling, read the documentation for [Elixir](https://hexdocs.pm/elixir/1.18.1/introduction.html), [Phoenix](https://hexdocs.pm/phoenix/Phoenix.html), [Absinthe](https://hexdocs.pm/absinthe/), and [Ecto](https://hexdocs.pm/ecto/Ecto.html). You will find many answers there (I mean really, these docs are top tier).
 
