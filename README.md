@@ -6,7 +6,7 @@ The purpose of this test is to assess your logical reasoning ability, as well as
 
 ## The challenge
 
-A customer has requested a very simple `enterprises` management system. Your role is to structure a CRUD-type interface that allows `enterprises` to be retrieved, registered, modified and removed from the system. Once this structure is complete, integrate the system with a simple `frontend` application. You will find the `frontend` boilerplate [here](here).
+A customer has requested a very simple `enterprises` management system. Your role is to structure a CRUD-type interface that allows `enterprises` to be retrieved, registered, modified and removed from the system. Once this structure is complete, integrate the system with a simple `frontend` application. You will find the `frontend` boilerplate [here](https://github.com/hubs-contabilidade/frontend-recruitment-test).
 
 ### Important notes
 
