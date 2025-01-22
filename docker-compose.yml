@@ -1,0 +1,23 @@
+version: "3"
+
+networks:
+  recruitment-test:
+    driver: bridge
+
+services:
+  database:
+    image: postgres
+    container_name: recruitment-test-db
+    ports:
+      - ${DATABASE_PORT:-5432}:5432
+    networks:
+      - recruitment-test
+    environment:
+      - POSTGRES_DB=recruitment_test_dev
+      - POSTGRES_USER=db_user
+      - POSTGRES_PASSWORD=db_password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata: null
