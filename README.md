@@ -2,11 +2,11 @@
 
 This is the `backend` boilerplate for the test to join the Hubs Contabilidade Technology Team. Welcome!
 
-The purpose of this test is to assess your logical reasoning ability, as well as your back-end coding skills, structuring relationships between entities, system integrations, code organization, creativity, independence, and problem-solving.
+The purpose of this test is to assess your logical reasoning ability, as well as your backend coding skills, structuring relationships between entities, system integrations, code organization, creativity, independence, and problem-solving.
 
 ## The challenge
 
-A customer has requested a very simple `enterprises` management system. Your role is to structure a CRUD-type interface that allows `enterprises` to be retrieved, registered, modified and removed from the system. Once this structure is complete, integrate the system with a simple `frontend` application. You will find the `frontend` boilerplate [here](https://github.com/hubs-contabilidade/frontend-recruitment-test).
+A customer has requested a very simple `enterprises` management system. Your role is to structure a CRUD-type interface that allows `enterprises` to be retrieved, registered, modified and removed from the system. Once this structure is complete, integrate the system with a simple `frontend` application. You will find the `frontend` boilerplate [here](https://github.com/hubs-contabilidade/frontend-recruitment-test). This integration is only required for FullStack Engineering roles. Make sure to check this out before you start to code anything.
 
 ### Important notes
 
