@@ -53,3 +53,7 @@ To start your `Phoenix` server:
 - Now you can consume the API through [`localhost:4000`](http://localhost:4000) from your preferred GraphQL client.
 
 ![GraphQL Client](assets/images/altair.png)
+
+## Any questions?
+
+Please contact us by email at `tecnologia@hubscontabilidade.com.br`. We do not promise to be able to answer all questions, but we will do our best to get back to you as quickly as possible.
