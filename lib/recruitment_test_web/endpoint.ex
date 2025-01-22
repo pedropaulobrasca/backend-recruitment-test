@@ -16,6 +16,16 @@ defmodule RecruitmentTestWeb.Endpoint do
     pass: ["*/*"],
     json_decoder: Jason
 
+  plug Corsica,
+    origins: [
+      "http://localhost",
+      ~r{^http?://(.*\.)?localhost\:(.*)$},
+      ~r{^https?://(.*\.)?localhost\:(.*)$}
+    ],
+    allow_credentials: true,
+    allow_headers: :all,
+    expose_headers: ["Set-Cookie"]
+
   plug Absinthe.Plug,
     schema: RecruitmentTestWeb.Schema
 end
