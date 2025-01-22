@@ -49,7 +49,7 @@ To start your `Phoenix` server:
 - Run `docker-compose up database` to setup the database container;
 - Run `mix setup` to install and setup dependencies, and to run the available migrations;
 - Start the application endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`;
-- Load the database dump available at `assets/dump.sql` to your local database;
+- Load the database dump available at `assets/enterprises.sql` to your local database;
 - Now you can consume the API through [`localhost:4000`](http://localhost:4000) from your preferred GraphQL client.
 
 ![GraphQL Client](assets/images/altair.png)
