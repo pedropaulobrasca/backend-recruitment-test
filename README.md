@@ -31,15 +31,20 @@ A customer has requested a very simple `enterprises` management system. Your rol
 - Unit and E2E tests;
 - Using asynchronous jobs and/or queues to handle stuff;
 - Integration with external APIs;
-- Audit logs.
+- Audit logs;
+- The application deployed on AWS (preferred) or any other cloud service.
 
 > Please keep in mind that we’re not evaluating whether you can build up an application with a million complex features. Do what you can within your available time. However, remember that the more things you can show, the more points your test will potentially earn.
 
 If you're struggling, read the documentation for [Elixir](https://hexdocs.pm/elixir/1.18.1/introduction.html), [Phoenix](https://hexdocs.pm/phoenix/Phoenix.html), [Absinthe](https://hexdocs.pm/absinthe/), and [Ecto](https://hexdocs.pm/ecto/Ecto.html). You will find many answers there (I mean really, these docs are top tier).
 
+## Deadline
+
+We expect you to finish your code within `1 week` from the day you received the test.
+
 The rest is up to you! Good luck!
 
-## General instructions
+## General setup instructions
 
 > To run this test, we assume you already have `Docker`, `Elixir` and some `DBMS` installed on your machine. If not, you'll need to figure out how to set this up yourself first.
 
