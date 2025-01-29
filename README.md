@@ -44,6 +44,12 @@ We expect you to finish your code within `1 week` from the day you received the 
 
 The rest is up to you! Good luck!
 
+### What and how to delivery?
+
+You must send us an email to `tecnologia@hubscontabilidade.com.br` with the links to your repository containing your source code.
+
+The repository must contain a `README.md` file with step-by-step instructions on how to run your application and, if necessary, additional instructions.
+
 ## General setup instructions
 
 > To run this test, we assume you already have `Docker`, `Elixir` and some `DBMS` installed on your machine. If not, you'll need to figure out how to set this up yourself first.
