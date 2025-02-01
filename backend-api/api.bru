@@ -1,0 +1,17 @@
+meta {
+  name: api
+  type: graphql
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  query helloWorld {
+    helloWorld
+  }
+}
