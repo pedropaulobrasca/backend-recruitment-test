@@ -19,5 +19,19 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  app:
+    build: .
+    command: mix setup && mix phx.server
+    depends_on:
+      - database
+    networks:
+      - recruitment-test
+    environment:
+      - MIX_ENV=dev
+      - DATABASE_HOST=database
+      - DATABASE_USER=db_user
+      - DATABASE_PASSWORD=db_password
+      - DATABASE_DB=recruitment_test_dev
+
 volumes:
   pgdata: null
