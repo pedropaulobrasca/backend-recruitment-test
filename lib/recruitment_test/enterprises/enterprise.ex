@@ -1,4 +1,13 @@
 defmodule RecruitmentTest.Enterprises.Enterprise do
+  @moduledoc """
+  Entidade responsável por representar empresas no sistema.
+
+  Campos obrigatórios:
+  - Nome legal (name)
+  - Nome comercial (commercial_name)
+  - CNPJ (formato 14 dígitos)
+  - Descrição (até 250 caracteres)
+  """
   use RecruitmentTest.Schema
 
   import Ecto.Changeset
