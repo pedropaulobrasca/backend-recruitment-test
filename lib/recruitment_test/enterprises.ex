@@ -27,10 +27,22 @@ defmodule RecruitmentTest.Enterprises do
   end
 
   def filter_enterprises(query, filters) do
-    from e in query,
-        where: ilike(e.name, ^"%#{filters[:name]}%") and
-               ilike(e.commercial_name, ^"%#{filters[:commercial_name]}%") and
-               ilike(e.cnpj, ^"%#{filters[:cnpj]}%") and
-               ilike(e.description, ^"%#{filters[:description]}%")
+    Enum.reduce(filters, query, fn
+      {:name, value}, query when is_binary(value) ->
+        where(query, [e], ilike(e.name, ^"%#{value}%"))
+      
+      {:commercial_name, value}, query when is_binary(value) ->
+        where(query, [e], ilike(e.commercial_name, ^"%#{value}%"))
+      
+      {:cnpj, value}, query when is_binary(value) ->
+        where(query, [e], ilike(e.cnpj, ^"%#{value}%"))
+      
+      {:description, value}, query when is_binary(value) ->
+        where(query, [e], ilike(e.description, ^"%#{value}%"))
+      
+      _, query ->
+        query
+    end)
+    |> Repo.all()
   end
 end

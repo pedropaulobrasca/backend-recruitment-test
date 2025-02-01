@@ -12,18 +12,34 @@ post {
 
 body:graphql {
   query {
-    enterprises {
-      id
-      name
-      commercial_name
-    }
+  	# Busca todas enterprises
+    # enterprises {
+    #   id
+    #   name
+    #   commercial_name
+    # }
     
-    enterprise(id: "1") {
-      id
-      name
-      commercial_name
-      cnpj
-      description
-    }
+    # Busca por uma enterprise
+    # enterprise(id: "d375e019-f9e7-4ae0-b7d3-b714e2ebcb70") {
+    #   id
+    #   name
+    #   commercial_name
+    #   cnpj
+    #   description
+    # }
+    
+    # Filtra enterprises
+    # filterEnterprises(filters: {
+    #   name: "Henderson"
+    #   # commercial_name: ""
+    #   # cnpj: ""
+    #   # description: ""
+    # }) {
+    #   id
+    #   name
+    #   commercial_name
+    #   cnpj
+    #   description
+    # }
   }
 }

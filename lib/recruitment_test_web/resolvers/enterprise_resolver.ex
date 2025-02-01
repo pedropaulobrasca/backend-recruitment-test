@@ -1,5 +1,6 @@
 defmodule RecruitmentTestWeb.Resolvers.EnterpriseResolver do
   alias RecruitmentTest.Enterprises
+  alias RecruitmentTest.Enterprises.Enterprise
 
   def list_enterprises(_parent, _args, _resolution) do
     {:ok, Enterprises.list_enterprises()}
@@ -37,11 +38,9 @@ defmodule RecruitmentTestWeb.Resolvers.EnterpriseResolver do
     end
   end
 
-  def filter_enterprises(_parent, args, _resolution) do
-    query = Enterprises.list_enterprises()
-
-    query = Enterprises.filter_enterprises(query, args)
-
-    {:ok, query}
+  def filter_enterprises(_parent, %{filters: filters}, _resolution) do
+    query = Enterprise
+    enterprises = Enterprises.filter_enterprises(query, filters)
+    {:ok, enterprises}
   end
 end

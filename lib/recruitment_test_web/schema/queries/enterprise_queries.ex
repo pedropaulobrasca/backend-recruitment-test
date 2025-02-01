@@ -14,5 +14,12 @@ defmodule RecruitmentTestWeb.Schema.Queries.EnterpriseQueries do
       arg :id, non_null(:id)
       resolve(&EnterpriseResolver.get_enterprise/3)
     end
+
+    @desc "Filtrar empresas por nome"
+    field :filter_enterprises, list_of(:enterprise) do
+      arg :filters, :enterprise_filter
+
+      resolve(&EnterpriseResolver.filter_enterprises/3)
+    end
   end
 end
