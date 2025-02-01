@@ -14,6 +14,7 @@ defmodule RecruitmentTest.Application do
       {Phoenix.PubSub, name: RecruitmentTest.PubSub},
       # Start the Finch HTTP client for sending emails
       {Finch, name: RecruitmentTest.Finch},
+      RecruitmentTest.Owners,
       # Start a worker by calling: RecruitmentTest.Worker.start_link(arg)
       # {RecruitmentTest.Worker, arg},
       # Start to serve requests, typically the last entry
