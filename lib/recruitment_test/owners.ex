@@ -1,7 +1,17 @@
 defmodule RecruitmentTest.Owners do
+  use GenServer
+
   import Ecto.Query, warn: false
   alias RecruitmentTest.Repo
   alias RecruitmentTest.Owners.Owner
+
+  def start_link(_args) do
+    GenServer.start_link(__MODULE__, nil, name: __MODULE__)
+  end
+
+  def init(_) do
+    {:ok, nil}
+  end
 
   def list_owners do
     Repo.all(Owner)
