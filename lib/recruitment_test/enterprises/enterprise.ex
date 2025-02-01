@@ -18,6 +18,8 @@ defmodule RecruitmentTest.Enterprises.Enterprise do
     field :cnpj, :string
     field :description, :string
 
+    has_many :owners, RecruitmentTest.Owners.Owner
+
     timestamps()
   end
 
