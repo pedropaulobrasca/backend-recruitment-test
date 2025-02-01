@@ -8,5 +8,11 @@ defmodule RecruitmentTestWeb.Schema.Queries.EnterpriseQueries do
     field :enterprises, list_of(:enterprise) do
       resolve(&EnterpriseResolver.list_enterprises/3)
     end
+
+    @desc "Buscar empresa por ID"
+    field :enterprise, :enterprise do
+      arg :id, non_null(:id)
+      resolve(&EnterpriseResolver.get_enterprise/3)
+    end
   end
 end
