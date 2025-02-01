@@ -11,7 +11,15 @@ post {
 }
 
 body:graphql {
-  query helloWorld {
-    helloWorld
+  query {
+    enterprises {
+      id
+      name
+      commercial_name
+      cnpj
+      description
+      inserted_at
+      updated_at
+    }
   }
 }
