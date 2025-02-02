@@ -1,0 +1,24 @@
+meta {
+  name: Busca por uma enterprise
+  type: graphql
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  query {
+    # Busca por uma enterprise
+    enterprise(id: "ec6915a4-0fc8-42e4-9206-d5f982c67bae") {
+      id
+      name
+      commercial_name
+      cnpj
+      description
+    }
+  }
+}

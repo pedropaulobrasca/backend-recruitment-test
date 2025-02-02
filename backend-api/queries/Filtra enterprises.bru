@@ -1,0 +1,29 @@
+meta {
+  name: Filtra enterprises
+  type: graphql
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  query {
+    # Filtra enterprises
+    filterEnterprises(filters: {
+      name: "Henderson"
+      # commercial_name: ""
+      # cnpj: ""
+      # description: ""
+    }) {
+      id
+      name
+      commercial_name
+      cnpj
+      description
+    }
+  }
+}

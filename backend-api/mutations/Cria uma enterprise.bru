@@ -1,0 +1,29 @@
+meta {
+  name: Cria uma enterprise
+  type: graphql
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/api
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  mutation {
+    # Cria uma enterprise
+    createEnterprise(
+      name: "Empresa Teste"
+      commercial_name: "Empresa de Testes"
+      cnpj: "12345678901234"
+      description: "Descricao legal"
+    ) {
+      id
+      name
+      commercial_name
+      cnpj
+      description
+    }
+  }
+}
