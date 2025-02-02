@@ -1,0 +1,30 @@
+meta {
+  name: Atualiza uma enterprise
+  type: graphql
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  mutation {
+    # Cria uma enterprise
+    updateEnterprise(
+      id: "ec6915a4-0fc8-42e4-9206-d5f982c67bae"
+      name: "Empresa Teste Atualizada"
+      commercial_name: "Empresa de Testes"
+      cnpj: "12345678901234"
+      description: "Descricao legal"
+    ) {
+      id
+      name
+      commercial_name
+      cnpj
+      description
+    }
+  }
+}
