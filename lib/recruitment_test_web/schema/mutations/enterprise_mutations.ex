@@ -22,6 +22,12 @@ defmodule RecruitmentTestWeb.Schema.Mutations.EnterpriseMutations do
 
       resolve &update_enterprise/3
     end
+
+    field :delete_enterprise, :enterprise do
+      arg :id, non_null(:id)
+
+      resolve &delete_enterprise/3
+    end
   end
 
   def create_enterprise(_parent, args, _resolution) do
@@ -38,6 +44,15 @@ defmodule RecruitmentTestWeb.Schema.Mutations.EnterpriseMutations do
     case Enterprises.update_enterprise(enterprise, args) do
       {:ok, enterprise} -> {:ok, enterprise}
       {:error, changeset} -> {:error, "Erro ao atualizar empresa: #{inspect(changeset.errors)}"}
+    end
+  end
+
+  def delete_enterprise(_parent, args, _resolution) do
+    enterprise = Enterprises.get_enterprise!(args.id)
+
+    case Enterprises.delete_enterprise(enterprise) do
+      {:ok, enterprise} -> {:ok, enterprise}
+      {:error, changeset} -> {:error, "Erro ao deletar empresa: #{inspect(changeset.errors)}"}
     end
   end
 end
