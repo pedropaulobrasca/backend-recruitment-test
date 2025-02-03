@@ -14,7 +14,13 @@ body:graphql {
   mutation {
     # Deleta uma enterprise
     deleteEnterprise(
-      id: "ec6915a4-0fc8-42e4-9206-d5f982c67bae"
-    )
+      id: "390bb7eb-3faf-455b-a35f-c189816246f5"
+    ) {
+      id
+      name
+      commercial_name
+      cnpj
+      description
+    }
   }
 }
