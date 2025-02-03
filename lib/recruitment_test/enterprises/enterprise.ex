@@ -8,9 +8,11 @@ defmodule RecruitmentTest.Enterprises.Enterprise do
   - CNPJ (formato 14 dígitos)
   - Descrição (até 250 caracteres)
   """
-  use RecruitmentTest.Schema
-
+  use Ecto.Schema
   import Ecto.Changeset
+
+  @primary_key {:id, :binary_id, autogenerate: true}
+  @foreign_key_type :binary_id
 
   schema "enterprises" do
     field :name, :string

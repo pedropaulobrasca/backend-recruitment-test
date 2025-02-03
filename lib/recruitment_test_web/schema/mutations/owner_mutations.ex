@@ -30,7 +30,19 @@ defmodule RecruitmentTestWeb.Schema.Mutations.OwnerMutations do
 
   def create_owner(_parent, args, _resolution) do
     case Owners.create_owner(args) do
-      {:ok, owner} -> {:ok, owner}
+      {:ok, owner} ->
+        RecruitmentTest.AuditLog.changeset(%RecruitmentTest.AuditLog{}, %{
+          action: "create",
+          occurred_at: DateTime.utc_now(),
+          resource_id: owner.id,
+          resource_type: "owner",
+          details: %{
+            name: owner.name,
+            document: owner.document,
+            enterprise_id: owner.enterprise_id
+          }
+        }) |> RecruitmentTest.Repo.insert!()
+        {:ok, owner}
       {:error, changeset} -> {:error, "Erro ao criar owner: #{inspect(changeset.errors)}"}
     end
   end
@@ -40,7 +52,19 @@ defmodule RecruitmentTestWeb.Schema.Mutations.OwnerMutations do
     IO.inspect(args)
 
     case Owners.update_owner(owner, args) do
-      {:ok, owner} -> {:ok, owner}
+      {:ok, owner} ->
+        RecruitmentTest.AuditLog.changeset(%RecruitmentTest.AuditLog{}, %{
+          action: "update",
+          occurred_at: DateTime.utc_now(),
+          resource_id: owner.id,
+          resource_type: "owner",
+          details: %{
+            name: owner.name,
+            document: owner.document,
+            enterprise_id: owner.enterprise_id
+          }
+        }) |> RecruitmentTest.Repo.insert!()
+        {:ok, owner}
       {:error, changeset} -> {:error, "Erro ao atualizar owner: #{inspect(changeset.errors)}"}
     end
   end
@@ -49,7 +73,19 @@ defmodule RecruitmentTestWeb.Schema.Mutations.OwnerMutations do
     owner = Owners.get_owner!(args.id)
 
     case Owners.delete_owner(owner) do
-      {:ok, owner} -> {:ok, owner}
+      {:ok, owner} ->
+        RecruitmentTest.AuditLog.changeset(%RecruitmentTest.AuditLog{}, %{
+          action: "delete",
+          occurred_at: DateTime.utc_now(),
+          resource_id: owner.id,
+          resource_type: "owner",
+          details: %{
+            name: owner.name,
+            document: owner.document,
+            enterprise_id: owner.enterprise_id
+          }
+        }) |> RecruitmentTest.Repo.insert!()
+        {:ok, owner}
       {:error, changeset} -> {:error, "Erro ao deletar owner: #{inspect(changeset.errors)}"}
     end
   end

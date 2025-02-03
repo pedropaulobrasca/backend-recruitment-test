@@ -32,7 +32,20 @@ defmodule RecruitmentTestWeb.Schema.Mutations.EnterpriseMutations do
 
   def create_enterprise(_parent, args, _resolution) do
     case Enterprises.create_enterprise(args) do
-      {:ok, enterprise} -> {:ok, enterprise}
+      {:ok, enterprise} ->
+        RecruitmentTest.AuditLog.changeset(%RecruitmentTest.AuditLog{}, %{
+          action: "create",
+          occurred_at: DateTime.utc_now(),
+          resource_id: enterprise.id,
+          resource_type: "enterprise",
+          details: %{
+            name: enterprise.name,
+            commercial_name: enterprise.commercial_name,
+            cnpj: enterprise.cnpj,
+            description: enterprise.description
+          }
+        }) |> RecruitmentTest.Repo.insert!()
+        {:ok, enterprise}
       {:error, changeset} -> {:error, "Erro ao criar empresa: #{inspect(changeset.errors)}"}
     end
   end
@@ -42,7 +55,20 @@ defmodule RecruitmentTestWeb.Schema.Mutations.EnterpriseMutations do
     IO.inspect(args)
 
     case Enterprises.update_enterprise(enterprise, args) do
-      {:ok, enterprise} -> {:ok, enterprise}
+      {:ok, enterprise} ->
+        RecruitmentTest.AuditLog.changeset(%RecruitmentTest.AuditLog{}, %{
+          action: "update",
+          occurred_at: DateTime.utc_now(),
+          resource_id: enterprise.id,
+          resource_type: "enterprise",
+          details: %{
+            name: enterprise.name,
+            commercial_name: enterprise.commercial_name,
+            cnpj: enterprise.cnpj,
+            description: enterprise.description
+          }
+        }) |> RecruitmentTest.Repo.insert!()
+        {:ok, enterprise}
       {:error, changeset} -> {:error, "Erro ao atualizar empresa: #{inspect(changeset.errors)}"}
     end
   end
@@ -51,7 +77,20 @@ defmodule RecruitmentTestWeb.Schema.Mutations.EnterpriseMutations do
     enterprise = Enterprises.get_enterprise!(args.id)
 
     case Enterprises.delete_enterprise(enterprise) do
-      {:ok, enterprise} -> {:ok, enterprise}
+      {:ok, enterprise} ->
+        RecruitmentTest.AuditLog.changeset(%RecruitmentTest.AuditLog{}, %{
+          action: "delete",
+          occurred_at: DateTime.utc_now(),
+          resource_id: enterprise.id,
+          resource_type: "enterprise",
+          details: %{
+            name: enterprise.name,
+            commercial_name: enterprise.commercial_name,
+            cnpj: enterprise.cnpj,
+            description: enterprise.description
+          }
+        }) |> RecruitmentTest.Repo.insert!()
+        {:ok, enterprise}
       {:error, changeset} -> {:error, "Erro ao deletar empresa: #{inspect(changeset.errors)}"}
     end
   end

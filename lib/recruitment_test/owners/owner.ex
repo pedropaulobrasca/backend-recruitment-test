@@ -1,7 +1,9 @@
 defmodule RecruitmentTest.Owners.Owner do
-  use RecruitmentTest.Schema
+  use Ecto.Schema
   import Ecto.Changeset
 
+  @primary_key {:id, :binary_id, autogenerate: true}
+  @foreign_key_type :binary_id
   schema "owners" do
     field :name, :string
     field :document, :string
@@ -10,9 +12,11 @@ defmodule RecruitmentTest.Owners.Owner do
     timestamps()
   end
 
+  @doc false
   def changeset(owner, attrs) do
     owner
     |> cast(attrs, [:name, :document, :enterprise_id])
     |> validate_required([:name, :document, :enterprise_id])
+    |> foreign_key_constraint(:enterprise_id)
   end
 end

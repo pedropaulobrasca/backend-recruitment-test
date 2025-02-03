@@ -1,6 +1,5 @@
 defmodule RecruitmentTestWeb.Resolvers.OwnerResolver do
   alias RecruitmentTest.Owners
-  alias RecruitmentTest.Owners.Owner
 
   def list_owners(_parent, _args, _resolution) do
     {:ok, Owners.list_owners()}
