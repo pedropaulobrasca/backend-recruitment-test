@@ -1,0 +1,29 @@
+meta {
+  name: Busca todos os owners
+  type: graphql
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/api
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  query {
+  	# Busca todos os owners
+    owners {
+      id
+      name
+      document
+      enterprise {
+        id
+        name
+      }
+      inserted_at
+      updated_at
+    }
+  }
+  
+}

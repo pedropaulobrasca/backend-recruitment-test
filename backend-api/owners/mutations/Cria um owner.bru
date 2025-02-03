@@ -1,0 +1,30 @@
+meta {
+  name: Cria um owner
+  type: graphql
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/api
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  mutation {
+    # Cria um owner
+    createOwner(
+      name: "João Silva Sauro"
+      document: "123.456.789-00"
+      enterprise_id: "95c88ad5-47ec-4d70-a1a6-adc6991d8540"
+    ) {
+      id
+      name
+      document
+      enterprise {
+        id
+        name
+      }
+    }
+  }
+}

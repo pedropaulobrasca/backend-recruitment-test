@@ -1,0 +1,28 @@
+meta {
+  name: Busca por um owner
+  type: graphql
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  query {
+    # Busca um owner por id
+    owner(id: "eb018854-e9ee-4ad4-a28f-f7a0e76750ff") {
+      id
+      name
+      document
+      enterprise {
+        id
+        name
+      }
+      inserted_at
+      updated_at
+    }
+  }
+}

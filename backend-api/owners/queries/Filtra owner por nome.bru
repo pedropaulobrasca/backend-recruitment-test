@@ -1,0 +1,30 @@
+meta {
+  name: Filtra owner por nome
+  type: graphql
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  query {
+    # Filtra owner por nome
+    filterOwners(filters: {
+      name: "Sauro"
+    }) {
+      id
+      name
+      document
+      enterprise {
+        id
+        name
+      }
+      inserted_at
+      updated_at
+    }
+  }
+}

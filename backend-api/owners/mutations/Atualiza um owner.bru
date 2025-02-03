@@ -1,0 +1,32 @@
+meta {
+  name: Atualiza um owner
+  type: graphql
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  mutation {
+    # Atualiza um owner
+    updateOwner(
+      id: "eb018854-e9ee-4ad4-a28f-f7a0e76750ff"
+      name: "João Silva Atualizado"
+      document: "987.654.321-00"
+    ) {
+      id
+      name
+      document
+      enterprise {
+        id
+        name
+      }
+      inserted_at
+      updated_at
+    }
+  }
+}
