@@ -3,7 +3,7 @@ defmodule RecruitmentTestWeb.Schema.Mutations.EnterpriseMutations do
 
   alias RecruitmentTest.Enterprises
 
-  object :enterprise_mutations do
+  object :enterprise_mutations_fields do
     field :create_enterprise, :enterprise do
       arg :name, non_null(:string)
       arg :commercial_name, non_null(:string)

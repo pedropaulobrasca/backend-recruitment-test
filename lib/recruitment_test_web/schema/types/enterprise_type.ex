@@ -1,6 +1,5 @@
 defmodule RecruitmentTestWeb.Schema.Types.EnterpriseType do
   use Absinthe.Schema.Notation
-  import_types Absinthe.Type.Custom
 
   object :enterprise do
     field :id, :id

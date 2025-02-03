@@ -1,5 +1,6 @@
 defmodule RecruitmentTestWeb.Resolvers.OwnerResolver do
   alias RecruitmentTest.Owners
+  alias RecruitmentTest.Owners.Owner
 
   def list_owners(_parent, _args, _resolution) do
     {:ok, Owners.list_owners()}
@@ -7,7 +8,7 @@ defmodule RecruitmentTestWeb.Resolvers.OwnerResolver do
 
   def get_owner(_parent, %{id: id}, _resolution) do
     case Owners.get_owner!(id) do
-      nil -> {:error, "Owner not found"}
+      nil -> {:error, "Owner não encontrado"}
       owner -> {:ok, owner}
     end
   end
@@ -35,5 +36,9 @@ defmodule RecruitmentTestWeb.Resolvers.OwnerResolver do
       {:ok, owner} -> {:ok, owner}
       {:error, changeset} -> {:error, changeset}
     end
+  end
+
+  def filter_owners(_parent, %{filters: filters}, _resolution) do
+    {:ok, Owners.filter_owners(filters)}
   end
 end

@@ -1,5 +1,5 @@
 defmodule RecruitmentTest.Owners.Owner do
-  use Ecto.Schema
+  use RecruitmentTest.Schema
   import Ecto.Changeset
 
   schema "owners" do
