@@ -18,5 +18,17 @@ defmodule RecruitmentTest.Owners.Owner do
     |> cast(attrs, [:name, :document, :enterprise_id])
     |> validate_required([:name, :document, :enterprise_id])
     |> foreign_key_constraint(:enterprise_id)
+    |> handle_document()
+  end
+
+  defp handle_document(changeset) do
+    changeset
+    |> update_change(:document, &numbers_only/1)
+    |> validate_length(:document, max: 14)
+    |> unique_constraint(:document, name: :owners_document_index, message: "já existe um owner com este documento")
+  end
+
+  defp numbers_only(value) do
+    String.replace(value, ~r/[^\d]/, "")
   end
 end
