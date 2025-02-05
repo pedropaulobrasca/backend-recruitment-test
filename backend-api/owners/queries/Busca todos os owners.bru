@@ -12,17 +12,24 @@ post {
 
 body:graphql {
   query {
-  	# Busca todos os owners
-    owners {
-      id
-      name
-      document
-      enterprise {
+    # Busca todos os owners
+    owners(pageSize: 10, pageNumber: 1) {
+      entries {
         id
         name
+        # enterprise {
+        #   id
+        #   name
+        # }
+        # inserted_at
+        # updated_at
       }
-      inserted_at
-      updated_at
+      pageInfo {
+        pageSize
+        pageNumber
+        totalEntries
+        totalPages
+      }
     }
   }
   

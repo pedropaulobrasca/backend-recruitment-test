@@ -2,6 +2,7 @@ defmodule RecruitmentTestWeb.Schema do
   use Absinthe.Schema
 
   import_types(Absinthe.Type.Custom)
+  import_types(RecruitmentTestWeb.Schema.Types.ContentTypes)
   import_types(RecruitmentTestWeb.Schema.Types.EnterpriseType)
   import_types(RecruitmentTestWeb.Schema.Types.OwnerType)
   import_types(RecruitmentTestWeb.Schema.Types.AuditLogType)

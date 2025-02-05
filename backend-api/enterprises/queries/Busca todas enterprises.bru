@@ -13,10 +13,17 @@ post {
 body:graphql {
   query {
   	# Busca todas enterprises
-    enterprises {
-      id
-      name
-      commercial_name
+    enterprises(pageSize: 10, pageNumber: 1) {
+      entries {
+        id
+        name
+      }
+      pageInfo {
+        pageSize
+        pageNumber
+        totalEntries
+        totalPages
+      }
     }
   }
 }
