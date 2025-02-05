@@ -15,7 +15,7 @@ Este é um sistema de gerenciamento de empresas desenvolvido com Elixir e Phoeni
 - API GraphQL com Absinthe
 - Sistema de e-mails com Swoosh (Não esta sendo utilizado no momento)
 - Suporte a CORS para integração frontend
-- Testes automatizados (Não esta sendo utilizado no momento)
+- Testes automatizados
 
 ## 🛠️ Tecnologias Utilizadas
 

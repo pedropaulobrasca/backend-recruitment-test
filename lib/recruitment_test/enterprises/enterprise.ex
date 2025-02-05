@@ -52,7 +52,7 @@ defmodule RecruitmentTest.Enterprises.Enterprise do
     |> validate_length(:commercial_name, max: 250)
   end
 
-  defp handle_cnpj(changeset) do
+  def handle_cnpj(changeset) do
     changeset
     |> validate_required(:cnpj)
     |> update_change(:cnpj, &numbers_only/1)
@@ -60,13 +60,13 @@ defmodule RecruitmentTest.Enterprises.Enterprise do
     |> unique_constraint(:cnpj)
   end
 
-  defp handle_description(changeset) do
+  def handle_description(changeset) do
     changeset
     |> validate_required(:description)
     |> validate_length(:description, max: 250)
   end
 
-  defp numbers_only(value) do
+  def numbers_only(value) do
     String.replace(value, ~r/[^\d]/, "")
   end
 end

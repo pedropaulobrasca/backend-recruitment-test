@@ -21,14 +21,14 @@ defmodule RecruitmentTest.Owners.Owner do
     |> handle_document()
   end
 
-  defp handle_document(changeset) do
+  def handle_document(changeset) do
     changeset
     |> update_change(:document, &numbers_only/1)
     |> validate_length(:document, max: 14)
     |> unique_constraint(:document, name: :owners_document_index, message: "já existe um owner com este documento")
   end
 
-  defp numbers_only(value) do
+  def numbers_only(value) do
     String.replace(value, ~r/[^\d]/, "")
   end
 end
