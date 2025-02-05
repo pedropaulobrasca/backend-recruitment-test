@@ -13,6 +13,11 @@ defmodule RecruitmentTestWeb.Schema do
   import_types(RecruitmentTestWeb.Schema.Mutations.EnterpriseMutations)
   import_types(RecruitmentTestWeb.Schema.Mutations.OwnerMutations)
 
+  scalar :map, description: "Map scalar type" do
+    serialize &Poison.encode!/1
+    parse &Poison.decode!/1
+  end
+
   query do
     import_fields(:enterprise_queries)
     import_fields(:owner_queries)

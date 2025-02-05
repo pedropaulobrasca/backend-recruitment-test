@@ -7,7 +7,7 @@ defmodule RecruitmentTestWeb.Schema.Types.AuditLogType do
     field :occurred_at, :naive_datetime
     field :resource_id, :id
     field :resource_type, :string
-    field :details, :string
+    field :details, :map
     field :inserted_at, :naive_datetime
     field :updated_at, :naive_datetime
   end

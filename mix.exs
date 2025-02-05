@@ -46,7 +46,8 @@ defmodule RecruitmentTest.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
-      {:corsica, "~> 1.0"}
+      {:corsica, "~> 1.0"},
+      {:poison, "~> 5.0"}
     ]
   end
 
