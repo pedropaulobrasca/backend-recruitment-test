@@ -13,10 +13,9 @@ Este é um sistema de gerenciamento de empresas desenvolvido com Elixir e Phoeni
 - CRUD completo de empresas e proprietários
 - Sistema de auditoria para rastreamento de mudanças
 - API GraphQL com Absinthe
-- Sistema de e-mails com Swoosh
+- Sistema de e-mails com Swoosh (Não esta sendo utilizado no momento)
 - Suporte a CORS para integração frontend
-- Telemetria para monitoramento
-- Testes automatizados
+- Testes automatizados (Não esta sendo utilizado no momento)
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -124,7 +123,6 @@ mix test --cover
 O sistema inclui:
 - Logs de auditoria para todas as operações
 - Telemetria Phoenix para monitoramento de performance
-- Logs de e-mails enviados
 
 ## 🚀 Deploy
 
@@ -143,7 +141,3 @@ docker-compose up
 ## 📄 Licença
 
 Este projeto está sob a licença MIT.
-
-## 📞 Contato
-
-Para dúvidas ou sugestões, entre em contato: tecnologia@hubscontabilidade.com.br
