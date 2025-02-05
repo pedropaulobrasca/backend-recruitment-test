@@ -17,4 +17,9 @@ defmodule RecruitmentTestWeb.Schema.Types.ContentTypes do
     field :entries, list_of(:owner)
     field :page_info, :page_info
   end
+
+  object :paginated_audit_logs_list do
+    field :entries, list_of(:audit_log)
+    field :page_info, :page_info
+  end
 end

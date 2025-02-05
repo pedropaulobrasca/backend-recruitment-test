@@ -12,11 +12,17 @@ post {
 
 body:graphql {
   query {
-    auditLogs {
-      id
-      action
-      resource_id
-      resource_type
+    auditLogs(pageSize: 10, pageNumber: 1) {
+      entries {
+        id
+        action
+      }
+      pageInfo {
+        pageSize
+        pageNumber
+        totalEntries
+        totalPages
+      }
     }
   }
 }
