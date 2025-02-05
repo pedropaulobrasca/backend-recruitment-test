@@ -26,23 +26,22 @@ defmodule RecruitmentTest.Enterprises do
     Repo.delete(enterprise)
   end
 
-  def filter_enterprises(query, filters) do
-    Enum.reduce(filters, query, fn
-      {:name, value}, query when is_binary(value) ->
-        where(query, [e], ilike(e.name, ^"%#{value}%"))
-      
-      {:commercial_name, value}, query when is_binary(value) ->
-        where(query, [e], ilike(e.commercial_name, ^"%#{value}%"))
-      
-      {:cnpj, value}, query when is_binary(value) ->
-        where(query, [e], ilike(e.cnpj, ^"%#{value}%"))
-      
-      {:description, value}, query when is_binary(value) ->
-        where(query, [e], ilike(e.description, ^"%#{value}%"))
-      
-      _, query ->
-        query
-    end)
-    |> Repo.all()
+  def filter_enterprises(filters) do
+    query = from(e in Enterprise)
+
+    query =
+      filters
+      |> Enum.reduce(query, fn
+        {:name, value}, query ->
+          from q in query, where: ilike(q.name, ^"%#{value}%")
+        {:commercial_name, value}, query ->
+          from q in query, where: ilike(q.commercial_name, ^"%#{value}%")
+        {:cnpj, value}, query ->
+          from q in query, where: ilike(q.cnpj, ^"%#{value}%")
+        _, query ->
+          query
+      end)
+
+    Repo.all(query)
   end
 end

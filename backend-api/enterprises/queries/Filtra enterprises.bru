@@ -12,18 +12,23 @@ post {
 
 body:graphql {
   query {
-    # Filtra enterprises
-    filterEnterprises(filters: {
-      name: "Empresa Teste"
-      # commercial_name: ""
-      # cnpj: ""
-      # description: ""
-    }) {
-      id
-      name
-      commercial_name
-      cnpj
-      description
+    filterEnterprises(
+      pageNumber: 1,
+      pageSize: 10,
+      filters: {
+        name: "Empresa"
+      }
+    ) {
+      entries {
+        id
+        name
+      }
+      pageInfo {
+        pageSize
+        pageNumber
+        totalEntries
+        totalPages
+      }
     }
   }
 }
