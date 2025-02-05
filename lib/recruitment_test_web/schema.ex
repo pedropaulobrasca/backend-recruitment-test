@@ -4,9 +4,11 @@ defmodule RecruitmentTestWeb.Schema do
   import_types(Absinthe.Type.Custom)
   import_types(RecruitmentTestWeb.Schema.Types.EnterpriseType)
   import_types(RecruitmentTestWeb.Schema.Types.OwnerType)
+  import_types(RecruitmentTestWeb.Schema.Types.AuditLogType)
 
   import_types(RecruitmentTestWeb.Schema.Queries.EnterpriseQueries)
   import_types(RecruitmentTestWeb.Schema.Queries.OwnerQueries)
+  import_types(RecruitmentTestWeb.Schema.Queries.AuditLogQueries)
 
   import_types(RecruitmentTestWeb.Schema.Mutations.EnterpriseMutations)
   import_types(RecruitmentTestWeb.Schema.Mutations.OwnerMutations)
@@ -14,6 +16,7 @@ defmodule RecruitmentTestWeb.Schema do
   query do
     import_fields(:enterprise_queries)
     import_fields(:owner_queries)
+    import_fields(:audit_log_queries)
   end
 
   mutation do

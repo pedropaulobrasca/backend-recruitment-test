@@ -1,0 +1,22 @@
+meta {
+  name: Busca todos os audit_logs
+  type: graphql
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/api
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  query {
+    auditLogs {
+      id
+      action
+      resource_id
+      resource_type
+    }
+  }
+}
